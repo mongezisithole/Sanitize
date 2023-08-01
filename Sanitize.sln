@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{5D7092C4-8D1F-45F4-A712-615A1D80A68B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanitize.Client", "Sanitize\Client\Sanitize.Client.csproj", "{0DD086BC-9133-4DDC-8CA9-2B2457A1B782}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{A1BDE595-FD54-4D04-B5E9-CA3A06C9E499}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanitize.Server", "Sanitize\Server\Sanitize.Server.csproj", "{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5FE31653-0672-4AFF-809F-827E32E2F3C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanitize.Shared", "Sanitize\Shared\Sanitize.Shared.csproj", "{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5CFF9365-4964-424E-9D97-1A5ECB02C2CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F232219D-6150-4FAA-93D2-DFC2D1DF1E6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{39554159-F446-404A-8912-CF43BCBF98A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Core", "Sanitize\Core\Sanitize.Core\Sanitize.Core.csproj", "{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Data", "Sanitize\Data\Sanitize.Data\Sanitize.Data.csproj", "{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Services.Interfaces", "Sanitize\Services\Sanitize.Services.Interfaces\Sanitize.Services.Interfaces.csproj", "{4B2625BE-8CE0-40E7-A692-21D3CB31C441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Services.Implementations", "Sanitize\Services\Sanitize.Services.Implementations\Sanitize.Services.Implementations.csproj", "{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DD086BC-9133-4DDC-8CA9-2B2457A1B782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD086BC-9133-4DDC-8CA9-2B2457A1B782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD086BC-9133-4DDC-8CA9-2B2457A1B782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD086BC-9133-4DDC-8CA9-2B2457A1B782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2625BE-8CE0-40E7-A692-21D3CB31C441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2625BE-8CE0-40E7-A692-21D3CB31C441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2625BE-8CE0-40E7-A692-21D3CB31C441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2625BE-8CE0-40E7-A692-21D3CB31C441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0DD086BC-9133-4DDC-8CA9-2B2457A1B782} = {5D7092C4-8D1F-45F4-A712-615A1D80A68B}
+		{0C108A2C-8C9B-4872-99A7-4BBCAF4481EA} = {A1BDE595-FD54-4D04-B5E9-CA3A06C9E499}
+		{93AA55B8-9AE3-411A-9BB2-E38FF6EFE254} = {5FE31653-0672-4AFF-809F-827E32E2F3C2}
+		{41C00748-1AA6-46F5-A76B-F0E6FB68DE6B} = {5CFF9365-4964-424E-9D97-1A5ECB02C2CF}
+		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC} = {F232219D-6150-4FAA-93D2-DFC2D1DF1E6A}
+		{4B2625BE-8CE0-40E7-A692-21D3CB31C441} = {39554159-F446-404A-8912-CF43BCBF98A9}
+		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB} = {39554159-F446-404A-8912-CF43BCBF98A9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A23607B-AC87-4401-B4FC-4DF4E12B13EF}
+	EndGlobalSection
+EndGlobal
