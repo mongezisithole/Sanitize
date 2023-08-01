@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Sanitize.Repository.Interfaces\Sanitize.Repository.Interfaces.csproj" />
+    <ProjectReference Include="..\Sanitize.Services.Interfaces\Sanitize.Services.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Services.Interface
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Services.Implementations", "Sanitize\Services\Sanitize.Services.Implementations\Sanitize.Services.Implementations.csproj", "{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Repository.Interfaces", "Sanitize\Data\Sanitize.Repository.Interfaces\Sanitize.Repository.Interfaces.csproj", "{7040713A-5E85-4C6D-8745-FC05B9F660F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanitize.Repository.Implementations", "Sanitize.Repository.Implementations\Sanitize.Repository.Implementations.csproj", "{AF83464E-E978-4699-86AA-AC7FEFBC65F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7040713A-5E85-4C6D-8745-FC05B9F660F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7040713A-5E85-4C6D-8745-FC05B9F660F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7040713A-5E85-4C6D-8745-FC05B9F660F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7040713A-5E85-4C6D-8745-FC05B9F660F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF83464E-E978-4699-86AA-AC7FEFBC65F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF83464E-E978-4699-86AA-AC7FEFBC65F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF83464E-E978-4699-86AA-AC7FEFBC65F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF83464E-E978-4699-86AA-AC7FEFBC65F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +87,8 @@ Global
 		{D5FC4427-87B9-4431-B9BE-091BD9EA5EDC} = {F232219D-6150-4FAA-93D2-DFC2D1DF1E6A}
 		{4B2625BE-8CE0-40E7-A692-21D3CB31C441} = {39554159-F446-404A-8912-CF43BCBF98A9}
 		{8BB8EEC2-E79E-4C35-99E1-80D985BB04AB} = {39554159-F446-404A-8912-CF43BCBF98A9}
+		{7040713A-5E85-4C6D-8745-FC05B9F660F5} = {F232219D-6150-4FAA-93D2-DFC2D1DF1E6A}
+		{AF83464E-E978-4699-86AA-AC7FEFBC65F2} = {F232219D-6150-4FAA-93D2-DFC2D1DF1E6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A23607B-AC87-4401-B4FC-4DF4E12B13EF}
