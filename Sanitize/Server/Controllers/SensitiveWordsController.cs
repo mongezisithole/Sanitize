@@ -4,6 +4,9 @@ using Sanitize.Shared;
 
 namespace Sanitize.Server.Controllers
 {
+    /// <summary>
+    /// A controller for sensitive words CRUD
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class SensitiveWordsController : ControllerBase

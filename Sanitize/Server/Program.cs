@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Sanitize.Data.Context;
 using Sanitize.Repository.Implementations;
@@ -17,6 +15,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 
 builder.Services.AddScoped<ISanitizeServices, SanitizeServices>();
+builder.Services.AddScoped<ISanitizer, Sanitizer>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
