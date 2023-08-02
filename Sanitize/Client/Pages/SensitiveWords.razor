@@ -1,0 +1,120 @@
+﻿@page "/sensitivewords"
+@using Sanitize.Shared
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+
+<PageTitle>Sensitive Words</PageTitle>
+
+<h1>Sensitive Words <a class="oi oi-plus" @onclick="AddWord"></a></h1>
+
+<AddNewWord @ref="addWordRef" />
+
+@if (sensitiveWords == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Word</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sensitiveWord in sensitiveWords)
+            {
+                <tr >
+                    <td style="align-content:center;">@sensitiveWord.Id</td>
+                    <td style="align-content:center;">@sensitiveWord.Word</td>
+                    <td>
+                        <button class="btn success" @onclick="(() => UpdateWord(sensitiveWord))">Update</button>
+                        <button class="btn danger" @onclick="(() => DeleteWord(sensitiveWord.Id))">X</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private AddNewWord addWordRef;
+
+    private SensitiveWordDetails[]? sensitiveWords { get; set; } = null;
+
+    private void UpdateWord(SensitiveWordDetails sensitiveWordDetails)
+    {
+        addWordRef.AddWord(this, sensitiveWordDetails.Word, sensitiveWordDetails.Id);
+    }
+
+    private async void DeleteWord(int? id)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+
+        if (confirmed)
+        {
+            var message = await Http.DeleteFromJsonAsync<string>($"api/SensitiveWords/{id}");
+
+            await JsRuntime.InvokeVoidAsync("alert", message);
+        }
+
+        Reload();
+    }
+
+    private void AddWord()
+    {
+        addWordRef.AddWord(this);
+    }
+
+    public async void Reload()
+    {
+        sensitiveWords = null;
+        this.StateHasChanged();
+
+        sensitiveWords = await Http.GetFromJsonAsync<SensitiveWordDetails[]>("api/SensitiveWords");
+        this.StateHasChanged();
+    }
+
+    public async void SaveWord(string? word, int? id = null)
+    {
+        if (id.HasValue && !string.IsNullOrEmpty(word))
+        {
+            var updatedWord = await Http.PutAsJsonAsync<SensitiveWordDetails>("api/SensitiveWords", new SensitiveWordDetails
+                {
+                    Id = id,
+                    Word = word.ToUpper()
+                });
+
+            if (updatedWord.IsSuccessStatusCode)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Word was updated successfully");
+            }
+            else
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Error, please try again");
+            }
+        }
+        else if (!string.IsNullOrEmpty(word))
+        {
+            var savedWord = await Http.PostAsync($"api/SensitiveWords?word={word.ToUpper()}", null);
+
+            if (savedWord.IsSuccessStatusCode)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Word was added successfully");
+            }
+            else
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Error, please try again");
+            }
+        }
+
+        Reload();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        sensitiveWords = await Http.GetFromJsonAsync<SensitiveWordDetails[]>("api/SensitiveWords");
+    }
+}

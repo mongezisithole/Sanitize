@@ -6,7 +6,7 @@ namespace Sanitize.Services.Interfaces
     {
         SensitiveWordDetails AddOrUpdateSensitiveWord(SensitiveWordDetails sensitiveWordDetails);
 
-        List<string> GetSensitiveWords();
+        List<SensitiveWordDetails> GetSensitiveWords();
 
         SensitiveWordDetails GetSensitiveWordDetails(int id);
 

@@ -2,12 +2,12 @@
 using Sanitize.Services.Interfaces;
 using Sanitize.Shared;
 
-namespace Sanitize.Server.Controllers
+namespace Sanitize.Api.Controllers
 {
     /// <summary>
     /// A controller for sensitive words CRUD
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/SensitiveWords")]
     [ApiController]
     public class SensitiveWordsController : ControllerBase
     {
@@ -25,7 +25,7 @@ namespace Sanitize.Server.Controllers
         /// <response code="200">A list of saved sensitive words</response>
         /// <response code="400">Something went wrong</response>
         [HttpGet(Name = "GetWords")]
-        [ProducesResponseType(typeof(List<string>), 200)]
+        [ProducesResponseType(typeof(List<SensitiveWordDetails>), 200)]
         [ProducesResponseType(400)]
         public IResult Get()
         {
@@ -47,7 +47,7 @@ namespace Sanitize.Server.Controllers
         /// <returns></returns>
         /// <response code="200">A saved sensitive word</response>
         /// <response code="400">Something went wrong</response>
-        [HttpGet("{id:int}",Name = "GetWord")]
+        [HttpGet("{id:int}", Name = "GetWord")]
         [ProducesResponseType(typeof(SensitiveWordDetails), 200)]
         [ProducesResponseType(400)]
         public IResult Get(int id)
@@ -106,7 +106,7 @@ namespace Sanitize.Server.Controllers
         [HttpPost(Name = "PostWord")]
         [ProducesResponseType(typeof(SensitiveWordDetails), 200)]
         [ProducesResponseType(400)]
-        public IResult Post(string word) 
+        public IResult Post(string word)
         {
             if (string.IsNullOrEmpty(word))
             {
@@ -115,7 +115,7 @@ namespace Sanitize.Server.Controllers
 
             try
             {
-                var wordDetails =_sanitizeServices.AddOrUpdateSensitiveWord(new SensitiveWordDetails { Word = word});
+                var wordDetails = _sanitizeServices.AddOrUpdateSensitiveWord(new SensitiveWordDetails { Word = word });
 
                 return Results.Ok(wordDetails);
             }
@@ -136,7 +136,7 @@ namespace Sanitize.Server.Controllers
         [ProducesResponseType(400)]
         public IResult Update(SensitiveWordDetails updateWordDetails)
         {
-            if(!updateWordDetails.Id.HasValue)
+            if (!updateWordDetails.Id.HasValue)
             {
                 return Results.BadRequest("Id cannot be null");
             }

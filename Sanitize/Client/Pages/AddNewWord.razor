@@ -1,0 +1,77 @@
+﻿@{
+    var showClass = IsVisible ? "d-block" : "d-none";
+}
+
+<div class="toast-container p-3 @showClass" data-bs-autohide="true" data-bs-delay="5000">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Add new word</strong>
+
+            <button type="button" class="btn-close" aria-label="Close" @onclick="Cancel"></button>
+        </div>
+
+        <div class="toast-body">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="100%">Word: </td>
+                        <td width="100%">
+                            <input type="text" style="border-color: black" @bind="Word"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%">
+                            <button class="btn success" @onclick="SaveWord">Save</button>
+                        </td>
+                        <td width="100%">
+                            <button class="btn danger" @onclick="Cancel">Cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public int? Id { get; set; }
+
+    [Parameter]
+    public SensitiveWords SensitiveWords { get; set; }
+
+    [Parameter]
+    public string? Word { get; set; }
+
+    public void AddWord(SensitiveWords sensitiveWords, string? word = null, int? id = null)
+    {
+        Word = word;
+        Id = id;
+        IsVisible = true;
+        SensitiveWords = sensitiveWords;
+        StateHasChanged();
+    }
+
+    private void SaveWord()
+    {
+        SensitiveWords.SaveWord(Word, Id);
+        Reload();
+    }
+
+    private void Reload()
+    {
+        IsVisible = false;
+        Word = string.Empty;
+        StateHasChanged();
+    }
+
+    private void Cancel()
+    {
+        Reload();
+        SensitiveWords.Reload();
+    }
+}

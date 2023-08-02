@@ -8,19 +8,37 @@ h1:focus {
     outline: none;
 }
 
-a, .btn-link {
-    color: #0071c1;
+
+.btn {
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+/* Green */
+.success {
+    border-color: #04AA6D;
+    color: green;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    .success:hover {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+/* Red */
+.danger {
+    border-color: #f44336;
+    color: red
 }
+
+    .danger:hover {
+        background: #f44336;
+        color: white;
+    }
 
 .content {
     padding-top: 1.1rem;

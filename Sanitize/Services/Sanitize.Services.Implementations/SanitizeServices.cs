@@ -56,9 +56,9 @@ namespace Sanitize.Services.Implementations
             throw new ArgumentNullException(nameof(savedWord));
         }
 
-        public List<string> GetSensitiveWords()
+        public List<SensitiveWordDetails> GetSensitiveWords()
         {
-            return _repository.GetAll.Select(o => o.Word).OrderBy(o => o).ToList();
+            return _repository.GetAll.OrderBy(o => o.Word).Select(o => o.ToSensitiveWordDetails()).ToList();
         }
 
         public void RemoveSensitiveWord(int id)

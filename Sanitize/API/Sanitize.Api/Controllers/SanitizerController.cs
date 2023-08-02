@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sanitize.Services.Interfaces;
 
-namespace Sanitize.Server.Controllers
+namespace Sanitize.Api.Controllers
 {
     /// <summary>
     /// A controller for sanitizing input string from the user

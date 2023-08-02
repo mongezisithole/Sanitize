@@ -1,0 +1,51 @@
+﻿@page "/sanitizer"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+
+<h3>Sanitizer</h3>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Word: </td>
+            <td width="70%">
+                <input type="text" style="border-color: black" @bind="Input" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn success" style="border-radius: 25%;" @onclick="Sanitize">Sanitize</button>
+            </td>
+            <td>
+                <button class="btn danger" style="border-radius: 25%; color:red;width:auto" @onclick="Clear">Clear</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    private string Input { get; set; } = string.Empty;
+
+    private async void Sanitize()
+    {
+        var sanitizerResponse = await Http.GetAsync($"api/Sanitizer?inputString={Input}");
+
+        if (sanitizerResponse.IsSuccessStatusCode)
+        {
+            var sanitizedInput = await sanitizerResponse.Content.ReadAsStringAsync();
+            await JsRuntime.InvokeVoidAsync("alert", $"Sanitized output is: {sanitizedInput}");
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Error, please try again");
+        }
+
+        Clear();
+    }
+
+    private void Clear()
+    {
+        Input = string.Empty;
+        this.StateHasChanged();
+    }
+}
